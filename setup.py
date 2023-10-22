@@ -7,7 +7,7 @@ setup(
     author='Ishan Oshada',
     author_email='ic31908@gmail.com',
     description='A module for encoding and encrypting data.',
-    long_description=open('Readme.md').read(),
+    long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/ishanoshada/encodify',
     classifiers=[
@@ -16,7 +16,7 @@ setup(
         'Operating System :: OS Independent',
     ],
     install_requires=[
-        # Add any required dependencies here
+        
         'python_minifier',  # Add this dependency
     ],
 )
