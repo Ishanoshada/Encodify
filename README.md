@@ -1,5 +1,7 @@
 # Encodify - Python Code Encoding Module
 
+![Python Version](https://img.shields.io/badge/python-3.9-blue.svg)
+
 `encodify` is a powerful Python module designed to provide a suite of advanced encoding techniques for Python scripts. These encoding methods encompass compression, base64 encoding, and XOR encryption, allowing users to obfuscate code for enhanced security or distribution.
 
 ## Table of Contents
@@ -151,6 +153,8 @@ payload = encoder.gen_payload(chosen_encoding_method, "print('Hello, World!')")
 2. **Testing and Verification**: Always test the encoded code to ensure it functions as expected.
 
 3. **Documentation**: Document the encoding method used and keep a record for future reference.
+
+**Repository Views** ![Views](https://profile-counter.glitch.me/encodify/count.svg)
 
 ## License
 
