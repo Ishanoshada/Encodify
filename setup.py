@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='encodify',
-    version='1.0.1',
+    version='1.0.2',
     packages=find_packages(),
     author='Ishan Oshada',
     author_email='ic31908@gmail.com',
@@ -16,7 +16,7 @@ setup(
         'Operating System :: OS Independent',
     ],
     install_requires=[
-        
+        #
         'python_minifier',  # Add this dependency
     ],
 )
