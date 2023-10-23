@@ -1,9 +1,6 @@
 """
 encodify - A module providing various encoding methods for Python code.
 Author: Ishan Oshada
-Email: ic31908@gmail.com
-Pypi Account: https://pypi.org/user/oshada
-pypi package: https://pypi.org/project/encodify 
 """
 
 import random
@@ -15,7 +12,7 @@ import marshal
 import base64
 import gzip
 import lzma
-
+import zlib
 
 class Encodify:
     """
@@ -288,7 +285,7 @@ class Encodify:
                 output += f'exec(marshal.loads(self.xor_encrypt(base64.b64decode("""{en}"""), "ishan")))\n'
         return output
      
-    def random_payload(self, data, line, options=None):
+    def random_payload(self, data, line=1, options=None):
         """
     Randomly selects an encoding function and applies it to provided data.
 
@@ -318,7 +315,7 @@ class Encodify:
             try:
               result = choice(data)
             except:
-                result = choice(data,line=line)
+                result = choice(data,n=2)
 
             # Additional options for customization
             if "replace_strings" in options:
@@ -377,9 +374,9 @@ class Encodify:
         }
      if choice in encoding_functions:
        try:
-        result = encoding_functions[choice](data)
+         result = encoding_functions[choice](data)
        except:
-           result = encoding_functions[choice](data,line=line)
+           result = encoding_functions[choice](data,n=2)
      else:
         return "Invalid choice. Please select a valid option."
 
@@ -400,3 +397,4 @@ class Encodify:
 __all__ = ['Encodify']
 __author__ = "Ishan"
 __package__ = "encodify"
+
