@@ -132,18 +132,29 @@ from encodify import Encodify
 # Create an instance of Encodify
 encoder = Encodify()
 
-# Encode specific code using the m1 method
-code_to_encode = "print('Hello, World!')"
-encoded_code = encoder.m1(code_to_encode)
+# Example 1: Encoding with m2 method
+code_to_encode = "for i in range(5):\n    print(f'Number: {i}')"
+encoded_code_m2 = encoder.m2(code_to_encode)
 
-# Generate a random payload with a random encoding method
+# Example 2: Encoding with l1 method
+line_based_code = "print('Hello, World!')"
+encoded_line_based_code = encoder.l1(line_based_code, 3)
+
+# Example 3: Generating a random payload
 random_payload = encoder.random_payload("print('Hello, World!')", 2)
 
-# Generate a payload with a specific encoding method (e.g., m2)
-chosen_encoding_method = 2
-payload = encoder.gen_payload(chosen_encoding_method, "print('Hello, World!')")
+# Example 4: Generating a payload with a specific encoding method (m11)
+chosen_encoding_method = 11
+payload_m11 = encoder.gen_payload(chosen_encoding_method, "print('Hello, World!')")
 
-# Additional customization can be done using options
+# Example 5: Customizing output with options
+options = {
+    "replace_strings": {"print": "display"},
+    "prepend_code": "import datetime\n",
+    "append_code": "\nprint(f'Execution Time: {datetime.datetime.now()}')"
+}
+customized_payload = encoder.gen_payload(1, "print('Hello, World!')", options=options)
+
 ```
 
 ## Best Practices and Considerations
