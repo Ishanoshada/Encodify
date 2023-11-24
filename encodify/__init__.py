@@ -1,6 +1,7 @@
 """
 encodify - A module providing various encoding methods for Python code.
 Author: Ishan Oshada
+
 """
 
 import random
