@@ -58,11 +58,11 @@ class Encodify:
 
     def m2(self, data):
         en = lzma.compress(base64.b64encode(marshal.dumps(compile(data, "_name_", "exec"))))
-        return f"import marshal,base64\nexec(marshal.loads(base64.b64decode(lzma.decompress({en}))))"
+        return f"import marshal,base64,lzma\nexec(marshal.loads(base64.b64decode(lzma.decompress({en}))))"
 
     def m3(self, data):
         en = lzma.compress(base64.b85encode(marshal.dumps(compile(data, "_name_", "exec"))))
-        return f"import marshal,base64\nexec(marshal.loads(base64.b85decode(lzma.decompress({en}))))"
+        return f"import marshal,base64,lzma\nexec(marshal.loads(base64.b85decode(lzma.decompress({en}))))"
 
     def m4(self, data):
         en = lzma.compress(marshal.dumps(compile(data, "_name_", "exec")))
@@ -73,7 +73,7 @@ class Encodify:
 
     def m5(self, data):
         en = base64.b64encode(lzma.compress(marshal.dumps(compile(data, "_name_", "exec"))))
-        return f"import marshal,lzma\nexec(marshal.loads(lzma.decompress(base64.b64decode({en}))))"
+        return f"import marshal,lzma,base64\nexec(marshal.loads(lzma.decompress(base64.b64decode({en}))))"
 
     def m6(self, data):
         en = lzma.compress(zlib.compress(marshal.dumps(compile(data, "_name_", "exec"))))
@@ -81,11 +81,11 @@ class Encodify:
 
     def m7(self, data):
         en = lzma.compress(gzip.compress(marshal.dumps(compile(data, "_name_", "exec"))))
-        return f"import marshal,gzip\nexec(marshal.loads(gzip.decompress(lzma.decompress({en}))))"
+        return f"import marshal,gzip,lzma\nexec(marshal.loads(gzip.decompress(lzma.decompress({en}))))"
 
     def m8(self, data):
         en = lzma.compress(marshal.dumps(compile(data, "_name_", "exec")))
-        return f"import marshal\nexec(marshal.loads(lzma.decompress({en})))"
+        return f"import marshal,lzma\nexec(marshal.loads(lzma.decompress({en})))"
 
     def m9(self, code):
         en = base64.b64encode(gzip.compress(marshal.dumps(compile(code, "_name_", "exec"))))
