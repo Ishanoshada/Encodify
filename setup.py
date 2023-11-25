@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='encodify',
-    version='1.0.3',
+    version='1.0.4',
     packages=find_packages(),
     author='Ishan Oshada',
     author_email='ic31908@gmail.com',
