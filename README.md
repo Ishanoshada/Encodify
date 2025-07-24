@@ -19,6 +19,17 @@
 - [Best Practices and Considerations](#best-practices-and-considerations)
 - [License](#license)
 
+## Give us a ⭐️ if you find this project helpful!  
+
+If you like this project, please consider giving it a star ⭐️ on GitHub. Your support motivates me to keep improving it!  
+
+<p align="center">
+  <a href="https://buymeacoffee.com/ishanoshada">
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" alt="Buy Me a Coffee">
+  </a>
+</p>
+
+
 ## Installation
 
 To integrate `encodify` into your project, you can use `pip`:
